@@ -55,7 +55,23 @@ const useStyles = (theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: '0.5rem'
-  }
+  },
+  githubLinkStyle: {
+    color: '#ffffff',
+    textDecoration: 'none',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: '2rem'
+  },
+  linkedinLinkStyle: {
+    color: '#ffffff',
+    textDecoration: 'none',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  iconStyle: { borderRadius: '50%', width: '48px', height: '48px' }
 });
 
 const Basic = ({
@@ -69,14 +85,10 @@ const Basic = ({
   const styles = useStyles(theme);
 
   return (
-    <div
-      style={{
-        ...styles.root
-      }}
-    >
+    <div style={styles.root}>
       <div style={styles.outerBoxStyle}>
         <div style={styles.design}>
-          <img src={imageUrl.value} alt="Rahul Goyal" style={styles.imgStyle} />
+          <img src={imageUrl.value} style={styles.imgStyle} />
           <div
             style={{
               ...styles.rotateBorder,
@@ -93,11 +105,7 @@ const Basic = ({
           </div>
 
           <div style={styles.blend}>
-            <img
-              src={imageUrl.value}
-              alt="Rahul Goyal"
-              style={styles.imgStyle}
-            />
+            <img src={imageUrl.value} style={styles.imgStyle} />
 
             <div style={styles.grid}>
               <div></div>
@@ -112,42 +120,21 @@ const Basic = ({
         </div>
         <div style={styles.linkStyling}>
           <a
-            style={{
-              color: '#ffffff',
-              textDecoration: 'none',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginRight: '2rem'
-            }}
+            style={styles.githubLinkStyle}
             href={githubUrl.value}
             target="_blank"
             referrer="noreferrer"
           >
-            <img
-              src={githubIcon}
-              style={{ borderRadius: '50%', width: '48px', height: '48px' }}
-              alt="github"
-            />
+            <img src={githubIcon} style={styles.iconStyle} />
             GitHub
           </a>
           <a
-            style={{
-              color: '#ffffff',
-              textDecoration: 'none',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
+            style={styles.linkedinLinkStyle}
             href={linkedinUrl.value}
             target="_blank"
             referrer="noreferrer"
           >
-            <img
-              src={linkedinIcon}
-              style={{ borderRadius: '50%', width: '48px', height: '48px' }}
-              alt="linkedIn"
-            />
+            <img src={linkedinIcon} style={styles.iconStyle} />
             LinkedIn
           </a>
         </div>
